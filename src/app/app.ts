@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ButtonModule } from 'primeng/button'
+import { DepartamentosPesquisa } from "./departamentos-pesquisa/departamentos-pesquisa";
+
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonModule],
+  imports: [RouterOutlet, DepartamentosPesquisa],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

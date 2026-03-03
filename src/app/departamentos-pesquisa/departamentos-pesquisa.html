@@ -1,0 +1,40 @@
+<div class="card my-10 flex flex-col items-center max-md:mx-10">
+  <div class="card flex justify-center">
+    <div class="flex flex-col gap-2 mb-4">
+      <label id="nome-departamento" for="buscaDepartamento">Nome do Departamento</label>
+      <div class="card flex flex-wrap justify-center">
+        <div class="relative items-center flex">
+          <p-button [text]="true" severity="secondary" [rounded]="true" size="small" class="absolute px-1" icon="pi pi-search" />
+        </div>
+        <input type="text" pInputText placeholder="Buscar" id="buscaDepartamento" class="pl-10! rounded-2xl! w-98"/>
+      </div>
+    </div>
+  </div>
+  <p-table 
+    class="mx-auto min-w-98 max-md:w-full" 
+    [value]="departamentos" 
+    stripedRows 
+    showGridlines
+    [paginator]="true" 
+    [rows]="5"
+  >
+    <ng-template #header>
+      <tr class="text-center p-0">
+        <th>Id</th>
+        <th>Nome</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-departamento>
+      <tr>
+        <td class="text-center!">{{ departamento.id }}</td>
+        <td>{{ departamento.nomeDepartamento }}</td>
+        <td class="flex gap-2">
+          <a href="" pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+          <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <p-button label="Novo departamento" />
+</div>
