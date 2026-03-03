@@ -1,0 +1,17 @@
+a {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  border-bottom: 1px solid #525151;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  align-items: center;
+}
+
+a:hover{
+  opacity: 80%;
+  transition-duration: 300ms;
+  background-color: oklch(35.8% 0.033 256.848);
+}

@@ -1,0 +1,18 @@
+<nav class="bg-yellow-400 p-2">
+  <i class="pi pi-bars cursor-pointer text-xl! ml-4 hover:opacity-65 duration-300" (click)="showMenu = !showMenu"></i>
+  <div class="fixed top-0 bottom-0 right-0 w-52 bg-gray-800 m-0 z-50" 
+      [hidden]="!showMenu">
+    <a href="">
+      <i class="pi pi-user"></i>
+      <span>Usuário</span>
+    </a>
+    <a href="">
+      <i class="pi pi-building"></i>
+      Departamentos
+    </a>
+    <a>
+      <i class="pi pi-users"></i>
+      Funcionários
+    </a>
+  </div>
+</nav>
