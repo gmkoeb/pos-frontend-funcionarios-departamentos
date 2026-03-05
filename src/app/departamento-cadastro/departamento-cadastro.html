@@ -1,9 +1,9 @@
 <form #departamentoCadastroForm="ngForm" (ngSubmit)="salvar(departamentoCadastroForm)">
   <div class="card flex justify-center">
-    <div class="flex flex-col gap-2 max-md:min-w-fit">
+    <div class="flex flex-col gap-2">
       <p-iftalabel>
         <label for="nomeDepartamento">Nome do Departamento</label>
-        <input class="min-w-98! h-14" pInputText id="nomeDepartamento" name="nomeDepartamento" [(ngModel)]="departamento.nome" required minlength="2" #nomeDepartamento="ngModel"/>
+        <input class="min-w-98! max-md:min-w-72! h-14" pInputText id="nomeDepartamento" name="nomeDepartamento" [(ngModel)]="departamento.nome" required minlength="2" #nomeDepartamento="ngModel"/>
       </p-iftalabel>
       @if (nomeDepartamento.invalid && nomeDepartamento.dirty) {
         @if (nomeDepartamento.hasError('required')){
