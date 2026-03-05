@@ -1,0 +1,27 @@
+<form #departamentoCadastroForm="ngForm" (ngSubmit)="salvar(departamentoCadastroForm)">
+  <div class="card flex justify-center">
+    <div class="flex flex-col gap-2 max-md:min-w-fit">
+      <p-iftalabel>
+        <label for="nomeDepartamento">Nome do Departamento</label>
+        <input class="min-w-98! h-14" pInputText id="nomeDepartamento" name="nomeDepartamento" [(ngModel)]="departamento.nome" required minlength="2" #nomeDepartamento="ngModel"/>
+      </p-iftalabel>
+      @if (nomeDepartamento.invalid && nomeDepartamento.dirty) {
+        @if (nomeDepartamento.hasError('required')){
+          <small class="text-red-500 flex items-center gap-1">
+            <i class="pi pi-times-circle mt-0.5"></i>
+            <p>Nome do departamento não pode ficar em branco.</p>
+          </small>
+        } @else if (nomeDepartamento.hasError('minlength')){
+          <small class="text-red-500 flex items-center gap-1">
+            <i class="pi pi-times-circle mt-0.5"></i>
+            <p>Nome do departamento deve ter um mínimo de {{ nomeDepartamento.errors?.['minlength'].requiredLength }} caracteres.</p>
+          </small>
+        }
+      }
+      <div class="flex gap-2">
+        <p-button type="submit" [disabled]="departamentoCadastroForm.invalid">Salvar</p-button>
+        <p-button type="button">Novo</p-button>
+      </div>
+    </div>
+  </div>
+</form>
